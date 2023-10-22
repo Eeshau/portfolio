@@ -18,7 +18,7 @@ interface Props {
   delay?: number; // Add this line
 }
 
-export const Reveal = ({ children, width = "fit-content", delay = 0.25 }: Props) => {
+const Reveal = ({ children, width = "fit-content", delay = 0.25 }: Props) => {
   const fadeIn = {
       hidden: { opacity: 0, y: 75 },
       visible: { opacity: 1, y: 0 }
