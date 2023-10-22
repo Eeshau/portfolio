@@ -5,6 +5,8 @@ import Image from 'next/image';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from 'next/link';
+import Nav from '../components/Nav'
+import Head from "next/head";
 
 // Reveal component for the animation
 interface Props {
@@ -40,16 +42,23 @@ const Reveal = ({ children, width = "fit-content", delay = 0.25 }: Props) => {
 // Your main Home component
 export default function Home() {
     return (
+        <>
+        <Head>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');</style>
+        </Head>
+        
+        
         <main className="relative min-h-screen bg-white animate-gradientBackground delay-500">
             <img src="/background.png" alt="Full screen background" className="absolute top-0 left-0 h-full w-full object-cover z-0"/>
             <div className="relative z-10 min-h-screen z-10 grid grid-rows-5 grid-flow-col gap-4 px-16">
-                <div className='row-start-4'>
+                <Nav/>
+                <div className='row-start-4 font-sans'>
                     <Reveal>
                         <h1 className="text-8xl font-bold">👋🏼 Eesha Ulhaq </h1>
                     </Reveal>
                         <div className='pl-28'>
                             <Reveal delay={0.75}>
-                            <h3 className="text-2xl">generalist of sorts? product - code - vibes</h3>
+                            <h3 className="text-2xl font-sans">generalist of sorts? product - code - vibes</h3>
                             </Reveal>
                             <Reveal delay={1}>
                               <div>
@@ -59,7 +68,7 @@ export default function Home() {
 
                             </Reveal>
                         </div>
-                   =
+                   
                 </div>
             </div>
             <style jsx>{`
@@ -69,6 +78,7 @@ export default function Home() {
                 }
             `}</style>
         </main>
+        </>
     );
 }
 
